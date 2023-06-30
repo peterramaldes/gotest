@@ -13,11 +13,10 @@ func TestEcho(t *testing.T) {
 		args    []string
 		want    string
 	}{
-		{false, "", []string{}, "\n"},
 		{false, "", []string{}, ""},
+		{false, ":", []string{"1", "2", "3"}, "1:2:3"},
 		{true, "\t", []string{"one", "two", "three"}, "one\ttwo\tthree\n"},
 		{true, ",", []string{"a", "b", "c"}, "a,b,c\n"},
-		{false, ":", []string{"1", "2", "3"}, "1:2:3"},
 	}
 
 	for _, test := range tests {
